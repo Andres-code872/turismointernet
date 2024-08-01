@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - CRUD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(to top, transparent, rgba(239, 46, 28, 0.5)), url('img/latacunga.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 0;
+            margin: 0;
+            color: #fff;
+        }
+        .contenedor {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #333;
+        }
+        .formulario {
+            margin-bottom: 20px;
+        }
+        .formulario input, .formulario button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: calc(100% - 22px);
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .formulario button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .formulario button:hover {
+            background-color: #555;
+        }
+        .contactos {
+            margin-top: 20px;
+        }
+        .contactos table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .contactos table, .contactos th, .contactos td {
+            border: 1px solid #ddd;
+        }
+        .contactos th, .contactos td {
+            padding: 10px;
+            text-align: left;
+        }
+        .contactos th {
+            background-color: #333;
+            color: #fff;
+        }
+        .contactos td button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contactos td button:hover {
+            background-color: #555;
+        }
+        .info-contacto {
+            margin-top: 20px;
+        }
+        .info-contacto h2 {
+            text-align: center;
+        }
+        .info-contacto p {
+            margin: 10px 0;
+        }
+        .info-contacto .redes a {
+            color: #fff;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        .info-contacto .redes i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <h1>Contactos</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="explorar.html">Explorar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="formulario">
+            <h2>Agregar Contacto</h2>
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="telefono" placeholder="Teléfono">
+            <input type="email" id="email" placeholder="Correo Electrónico">
+            <button onclick="agregarContacto()">Agregar</button>
+        </div>
+
+        <div class="contactos">
+            <h2>Lista de Contactos</h2>
+            <table id="tablaContactos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Correo Electrónico</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los contactos se agregarán aquí -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-contacto">
+            <h2>Información de Contacto</h2>
+            <p><strong>Dirección:</strong> Av. 12 de Noviembre, Latacunga, Ecuador</p>
+            <p><strong>Teléfono:</strong> +593 99 999 999</p>
+            <p><strong>Correo Electrónico:</strong> contacto@example.com</p>
+            <p><strong>Redes Sociales:</strong></p>
+            <div class="redes">
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let contactos = [];
+
+        function agregarContacto() {
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+
+            if (nombre && telefono && email) {
+                const contacto = { nombre, telefono, email };
+                contactos.push(contacto);
+                mostrarContactos();
+                document.getElementById('nombre').value = '';
+                document.getElementById('telefono').value = '';
+                document.getElementById('email').value = '';
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+
+        function eliminarContacto(index) {
+            contactos.splice(index, 1);
+            mostrarContactos();
+        }
+
+        function mostrarContactos() {
+            const tabla = document.getElementById('tablaContactos').getElementsByTagName('tbody')[0];
+            tabla.innerHTML = '';
+
+            contactos.forEach((contacto, index) => {
+                const fila = tabla.insertRow();
+                fila.insertCell().textContent = contacto.nombre;
+                fila.insertCell().textContent = contacto.telefono;
+                fila.insertCell().textContent = contacto.email;
+
+                const celdaAcciones = fila.insertCell();
+                const botonEliminar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar';
+                botonEliminar.onclick = () => eliminarContacto(index);
+                celdaAcciones.appendChild(botonEliminar);
+            });
+        }
+    </script>
+</body>
+</html>
+

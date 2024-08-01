@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Cotopaxi</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        body {
+            background: linear-gradient(to top, transparent, rgba(239, 46, 28, 0.5)), url(img/cotopaxi2.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .contenedor {
+            max-width: 1200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            padding: 50px;
+            color: #fff;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            line-height: 33px;
+            font-size: 14px;
+            padding: 5px 10px;
+            transition: 0.5s;
+            border-radius: 20px;
+        }
+        nav ul li a:hover {
+            background-color: #000;
+        }
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .galeria .item {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .galeria .item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        .galeria .item p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <h1>Explorar </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="explorar.html">Explorar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="galeria">
+            <div class="item">
+                <img src="img/imagen3.jpg" alt="Parque La Salle">
+                <p>Parque La Salle: La reliquia colonial que guarda secular grandeza en la historia de Cotopaxi.</p>
+            </div>
+            <div class="item">
+                <img src="img/imagen2.jpg" alt="Parque Vicente Leon">
+                <p>Parque Vicente Leon: la reliquia colonial que guarda secular grandeza en la historia de Cotopaxi.</p>
+            </div>
+            <div class="item">
+                <img src="img/foto4.jpg" alt="La fritada">
+                <p>La Fritada: Este delicioso manjar es un verdadero tesoro culinario de la región y te transportará a través de su sabor a la rica tradición gastronómica de Latacunga.</p>
+            </div>
+            <div class="item">
+                <img src="img/foto3.jpg" alt="La Mama Negra">
+                <p>La Mama Negra: Es una fiesta que se realiza dos veces al año en la ciudad ecuatoriana de Latacunga, Originalmente celebrada en honor a la Virgen de la Merced.</p>
+            </div>
+            <div class="item">
+                <img src="img/imagen4.jpg" alt="Desfile Latacunga">
+                <p>Desfile Civico: Estudiantes de 16 instituciones educativas, a ritmo de bandas marciales, rinden homenaje a Latacunga por las principales calles de la ciudad. </p>
+            </div>
+            <div class="item">
+                <img src="img/imagen5.jpg" alt="Las allullas">
+                <p>Las allullas: Son una especie de bizcocho elaborado con harina de trigo, sal, azúcar, leche y manteca de cerdo. </p>
+            </div>
+            <div class="item">
+                <img src="img/imagen6.jpg" alt="Hacienda La Cienega">
+                <p>Hacienda La Cienega: una histórica hacienda colonial que ofrece una experiencia cultural única.</p>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
+
+
+

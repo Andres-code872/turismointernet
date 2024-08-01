@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+body {
+    background: linear-gradient(to top,transparent,rgba(239,46,28,.5)), url(img/cotopaxi2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor {
+    max-width: 1200px; /* Aumentado el ancho máximo */
+    background-color: rgba(0,0,0,.7);
+    border-radius: 30px;
+    padding: 30px; /* Reducido el padding */
+    color: #fff;
+}
+.contenedor header {
+    overflow: hidden;
+}
+.contenedor header h1 {
+    float: left;
+    font-size: 24px; /* Reducido el tamaño de la fuente */
+}
+.contenedor header nav {
+    float: left;
+}
+.contenedor header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.contenedor header nav ul li {
+    margin: 0 20px; /* Reducido el margen */
+}
+.contenedor header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 30px; /* Ajustado la altura de línea */
+    font-size: 12px; /* Reducido el tamaño de la fuente */
+    padding: 5px 10px;
+    transition: .5s;
+    border-radius: 20px;
+}
+.contenedor header nav ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+.contenedor header .busqueda {
+    float: right;
+}
+.contenedor header .busqueda input {
+    display: inline-block;
+    width: 200px;
+    border: none;
+    background-color: rgba(0,0,0,.4);
+    padding: 5px; /* Reducido el padding */
+    outline: none;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
+.contenedor header .busqueda:hover input {
+    opacity: 1;
+}
+.contenedor header .busqueda i {
+    cursor: pointer;
+}
+.contenedor .contenido {
+    display: flex;
+    position: relative;
+}
+.contenido .linea-decorativa {
+    position: absolute;
+    height: 200px; /* Reducido la altura */
+    border-left: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.contenido .linea-decorativa .circulo {
+    width: 10px; /* Reducido el tamaño del círculo */
+    height: 10px; /* Reducido el tamaño del círculo */
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: -9px;
+}
+
+.contenedor .contenido .left {
+    width: 50%;
+    margin-top: 30px;
+    padding-left: 30px; /* Reducido el padding */
+}
+.contenedor .contenido .left h2 {
+    padding-top: 40px; /* Reducido el padding superior */
+    font-size: 30px; /* Reducido el tamaño de la fuente */
+    font-weight: bold;
+    margin-bottom: 20px; /* Reducido el margen inferior */
+}
+.contenedor .contenido .left p {
+    margin-bottom: 40px; /* Reducido el margen inferior */
+    font-size: 12px; /* Reducido el tamaño de la fuente */
+}
+.contenedor .contenido .left button {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 40px; /* Reducido el margen inferior */
+    transition: .5s;
+    cursor: pointer;
+}
+.contenedor .contenido .left button:hover {
+    background-color: #000;
+    color: #fff;
+}
+.contenedor .contenido .left .redes {
+    font-size: 10px; /* Reducido el tamaño de la fuente */
+    width: fit-content;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #fff;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor .contenido .left .redes a {
+    text-decoration: none;
+    color: #fff;
+}
+.contenedor .contenido .right {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    text-align: right;
+}
+.contenedor .contenido .right .popular {
+    border-bottom: 2px solid #fff;
+    width: 100px;
+    padding-bottom: 5px;
+    margin-bottom: 20px; /* Reducido el margen inferior */
+}
+.contenedor .contenido .right .contenedor-fotos {
+    display: flex;
+    justify-content: end;
+}
+
+.contenedor .contenido .right .contenedor-fotos img {
+    width: 20%; /* Reducido el ancho */
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reducido el gap */
+}
+
+.galeria .item {
+    flex: 1 1 20%; /* Reducido el ancho flexible */
+    text-align: center;
+}
+
+.galeria .item img {
+    width: 100%;
+    height: auto;
+}
+
+.galeria .item p {
+    margin-top: 5px; /* Reducido el margen superior */
+    font-size: 0.8rem; /* Reducido el tamaño de la fuente */
+}
